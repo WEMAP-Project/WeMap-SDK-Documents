@@ -8,24 +8,21 @@ WeMap Web SDK hay WeMap GL JS là một thư viện JavaScript sử dụng WebGL
 
 ## Hướng dẫn cài đặt và sử dụng
 
-Bạn có thể `clone` từ Github phiên bản mới nhất của thư viện [tại đây](https://github.com/WEMAP-Official/WeMap-Web-SDK-Release/tree/master/assets), sau đó nhúng vào trang web của bạn
+Bạn `clone` từ Github phiên bản mới nhất của thư viện [tại đây](https://github.com/WEMAP-Official/WeMap-Web-SDK-Release), sau đó nhúng vào trang web của bạn
 ```html
 <script src="<đường dẫn tới repo>/WeMap-Web-SDK-Release/assets/js/wemap-gl.js" type="text/javascript"></script>
 <link href="<đường dẫn tới repo>/WeMap-Web-SDK-Release/assets/css/wemap.min.css" rel="stylesheet" />
 ```
-Bạn cũng có thể sử dụng [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) mà không cần phải tải về
-```html
-<script src="https://raw.githubusercontent.com/WEMAP-Official/WeMap-Web-SDK-Release/master/assets/js/wemap-gl.js" type="text/javascript"><script>
-<link href="https://raw.githubusercontent.com/WEMAP-Official/WeMap-Web-SDK-Release/master/assets/css/wemap.min.css" rel="stylesheet" />
-```
-Để sử dụng các dịch vụ của WeMap, bạn cần có một *key*. [Liên hệ]() để nhận một key.
+Bạn cũng có thể tải trực tiếp file `.js` hoặc `.css` từ địa chỉ trên và đưa vào thư mục tuỳ ý của bạn.  
+  
+Để sử dụng các dịch vụ của WeMap, bạn cần có một *key*. [Liên hệ WeMap](#) để nhận một key.
 
 ## Cùng bắt đầu với một ví dụ đơn giản
 - Thêm file `.js` và `.css` của thư viện vào header trang web của bạn giống như sau:  
 
 ```html
-<script src="../wemapgl/js/wemap-gl.js" type="text/javascript"></script>
-<link href="../wemapgl/css/wemap.min.css" rel="stylesheet" />
+<script src="https://raw.githubusercontent.com/WEMAP-Official/WeMap-Web-SDK-Release/master/assets/js/wemap-gl.js" type="text/javascript"><script>
+<link href="https://raw.githubusercontent.com/WEMAP-Official/WeMap-Web-SDK-Release/master/assets/css/wemap.min.css" rel="stylesheet" />
 ```
 - Thêm một phần tử `div` với một `id` tại vị trí mà bạn muốn đặt bản đồ
 ```html
