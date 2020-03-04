@@ -79,7 +79,7 @@ Trả về **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Referenc
 
 ### setOrigin
 
-Đặt điểm bắt đầu. _Chú ý:_ lời gọi phương thức này yêu cầu [sự kiện tải bản đồ](https://www.mapbox.com/mapbox-gl-js/api/#Map.load)
+Đặt điểm bắt đầu. _Chú ý:_ lời gọi phương thức này yêu cầu [sự kiện tải bản đồ](#)
 để có thể khởi chạy.
 
 **Các tham số**
@@ -100,7 +100,7 @@ Trả về **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Referenc
 
 ### setDestination
 
-Đặt điểm đến. _Chú ý:_ lời gọi phương thức này yêu cầu [sự kiện tải bản đồ](https://www.mapbox.com/mapbox-gl-js/api/#Map.load)
+Đặt điểm đến. _Chú ý:_ lời gọi phương thức này yêu cầu [sự kiện tải bản đồ](#)
 để có thể khởi chạy.
 
 **Các tham số**
@@ -123,7 +123,7 @@ Trả về **[WeDirections](#wedirections)** `this`
 
 ### addWaypoint
 
-Thêm điểm ghé qua vào tuyến đường. _Chú ý:_ lời gọi phương thức này yêu cầu [sự kiện tải bản đồ](https://www.mapbox.com/mapbox-gl-js/api/#Map.load)
+Thêm điểm ghé qua vào tuyến đường. _Chú ý:_ lời gọi phương thức này yêu cầu [sự kiện tải bản đồ](#)
 để có thể khởi chạy.
 
 **Các tham số**
@@ -138,7 +138,7 @@ Trả về **[WeDirections](#wedirections)** `this`;
 
 ### setWaypoint
 
-Thay đổi điểm ghé qua của tuyến đường tại một chỉ số cho trước. _Chú ý:_ lời gọi phương thức này yêu cầu [sự kiện tải bản đồ](https://www.mapbox.com/mapbox-gl-js/api/#Map.load) để có thể khởi chạy.
+Thay đổi điểm ghé qua của tuyến đường tại một chỉ số cho trước. _Chú ý:_ lời gọi phương thức này yêu cầu [sự kiện tải bản đồ](#) để có thể khởi chạy.
 
 **Các tham số**
 
