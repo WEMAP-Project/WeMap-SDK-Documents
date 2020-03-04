@@ -12,22 +12,22 @@ Các tính năng nổi bật:
 
 -   `options` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
     - `options.key` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Plugin sẽ sử dụng key này để sử dụng API chỉ đường.
-    -   `options.styles` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)?** Ghi đè các thuộc tính của lớp mặc định trong [mã nguồn chỉ đường](https://github.com/mapbox/mapbox-gl-directions/blob/master/src/directions_style.js). Tài liệu cho từng thuộc tính được mô tả tại [Tham khảo về Kiểu dáng của WeMap GL](https://www.mapbox.com/mapbox-gl-style-spec/).
-    -   `options.api` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Ghi đè URL mặc định của máy chủ tìm đường (tuỳ chọn, mặc định là `"https://api.mapbox.com/directions/v5/"`)
-    -   `options.interactive` **[Boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Bật/Tắt tính năng tương tác bằng chuột hoặc cảm ứng từ plugin (tuỳ chọn, mặc định là `true`)
-    -   `options.profile` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Cấu hình chỉ đường được sử dụng. Các lựa chọn: `wemap/driving-traffic`, `wemap/driving`, `wemap/walking`, `wemap/cycling` (tuỳ chọn, mặc định là `"wemap/driving-traffic"`)
+    - `options.engine` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Chỉ định dịch vụ tìm đường được sử dụng. Các lưạ chọn: `default`, `osrm`, `graphhopper`, `mapbox`. (tuỳ chọn, mặc định là `default`, tương đương với `osrm`)
+    -   `options.styles` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)?** Ghi đè các thuộc tính của lớp mặc định của plugin. Tài liệu cho từng thuộc tính được mô tả tại [Tham khảo về Kiểu dáng của WeMap GL](#).
+    -   `options.interactive` **[Boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Bật/Tắt tính năng tương tác bằng chuột hoặc cảm ứng từ plugin (tuỳ chọn, mặc định là `false`)
+    -   `options.mode` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Cấu hình chỉ đường được sử dụng. Các lựa chọn: `traffic`, `driving`, `walking`, `cycling` (tuỳ chọn, mặc định là `"driving"`)
     -   `options.alternatives` **[Boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Bật hoặc tắt tính năng đường đi tương tự. (tuỳ chọn, mặc định là `false`)
     -   `options.congestion` **[Boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Bật hoặc tắt tính năng tắc nghẽn trên đường đi. (tuỳ chọn, mặc định là `false`)
-    -   `options.unit` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Hệ đo lường được sử dụng trong hướng dẫn chỉ đường. Các lựa chọn: `imperial`, `metric` (tuỳ chọn, mặc định là `"imperial"`)
+    -   `options.unit` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Hệ đo lường được sử dụng trong hướng dẫn chỉ đường. Các lựa chọn: `imperial`, `metric` (tuỳ chọn, mặc định là `"metric"`)
     -   `options.compile` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** Đưa vào một hàm để tạo ra hướng dẫn chỉ đường, tương thích với osrm-text-instructions. (tuỳ chọn, mặc định là `null`)
-    -   `options.geocoder` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)?** Nhận một đối tượng chứa các tham số truy vấn được [mô tả tại đây](https://www.mapbox.com/api-documentation/#search-for-places).
+    -   `options.geocoder` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)?** Nhận một đối tượng chứa các tham số truy vấn được [mô tả tại đây](https://www.mapbox.com/api-documentation/#search-for-places). Mặc định là `"default"`, tương đương với `"pelias"`.
     -   `options.controls` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)?** 
         -   `options.controls.inputs` **[Boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Ẩn hoặc hiển thị các khung đầu vào. (tuỳ chọn, mặc định là `true`)
         -   `options.controls.instructions` **[Boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Ẩn hoặc hiển thị khung hướng dẫn chỉ đường. (tuỳ chọn, mặc định là `true`)
         -   `options.controls.profileSwitcher` **[Boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Ẩn hoặc hiển thị bộ chuyển đổi giữa các cấu hình chỉ đường mặc định với các lựa chọn cho mật độ phương tiện, lái xe, đi bộ và phương tiện hai bánh. (tuỳ chọn, mặc định là `true`)
     -   `options.zoom` **[Number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** Nếu không có bbox tồn tại trong kết quả trả về từ geocoder, độ phóng đại được đặt ở đây sẽ được sử dụng cho tính năng flyTo. (tuỳ chọn, mặc định là `16`)
-    -   `options.placeholderOrigin` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Nếu được đặt, chuỗi ký tự này sẽ là thuộc tính placeholder cho phần tử input của điểm bắt đầu. (tuỳ chọn, mặc định là `"Choose a starting place"`)
-    -   `options.placeholderDestination` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Nếu được đặt, chuỗi ký tự này sẽ là thuộc tính placeholder cho phần tử input của điểm đến. (tuỳ chọn, mặc định là `"Choose destination"`)
+    -   `options.placeholderOrigin` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Nếu được đặt, chuỗi ký tự này sẽ là thuộc tính placeholder cho phần tử input của điểm bắt đầu. (tuỳ chọn, mặc định là `"Chọn điểm bắt đầu"`)
+    -   `options.placeholderDestination` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Nếu được đặt, chuỗi ký tự này sẽ là thuộc tính placeholder cho phần tử input của điểm đến. (tuỳ chọn, mặc định là `"Chọn điểm kết thúc"`)
     -   `options.flyTo` **[Boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** Nếu `false`, tắt đi tính năng hoạt ảnh bản đồ tới một kết quả được chọn. (tuỳ chọn, mặc định là `true`)
     -   `options.exclude` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Bỏ đi một loại đường ra khỏi tuyến đường. Các lựa chọn: `ferry`, `toll`, `motorway` (tuỳ chọn, mặc định là `null`)
 
@@ -37,8 +37,6 @@ Các tính năng nổi bật:
 // định nghĩa plugin
 var directions = new WeDirections({
   key: 'YOUR-WEMAP-ACCESS-TOKEN',
-  unit: 'metric',
-  profile: 'wemap/cycling'
 });
 // thêm plugin vào bản đồ
 map.addControl(directions);
