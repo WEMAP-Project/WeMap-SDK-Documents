@@ -50,7 +50,7 @@ map.addControl(new mapboxgl.NavigationControl());
 #### `removeControl(control)`  
 Removes the control from the map.  
 **Các tham số**  
-**`control`** ([`IControl`]()) The `IControl` to remove.
+**`control`** ([`IControl`]()) The `IControl` to remove.  
 **Trả về**  
 [`WeMap`](#wemap): `this`  
 **Ví dụ**  
