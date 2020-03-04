@@ -50,19 +50,19 @@ Như vậy, một bản đồ WeMap đã được thêm vào trang web của b�
 Để sử dụng nhiều tính năng hơn, hãy đọc thêm về *các thành phần cơ bản* dưới đây
 ## Các thành phần cơ bản
 
-### [`wemapgl.WeMap`](/wemap)
+### [`wemapgl.WeMap`](./wemap.md)
 
 Một đối tượng `WeMap` biểu diễn một bản đồ, cung cấp các giao diện lập trình để tạo ra các bản đồ có tính tương tác cao.
 
 ---
 
-### [`wemapgl.WeGeocoder`](/wegeocoder)
+### [`wemapgl.WeGeocoder`](./wegeocoder.md)
 
 Một plugin Geocoding cho bản đồ WeMap, cho phép lựa chọn engine tìm kiếm, lấy thông tin chi tiết của địa điểm ...
 
 ---
 
-### [`wemapgl.WeDirections`](/wedirections)
+### [`wemapgl.WeDirections`](./wedirections.md)
 
 Plugin cung cấp tính năng chỉ đường chất lượng cao cho bản đồ WeMap.
 
