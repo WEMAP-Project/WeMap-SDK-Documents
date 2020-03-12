@@ -42,7 +42,7 @@ Thêm một `IControl` vào bản đồ và thực hiện lời gọi `control.o
 
 ```javascript
 // Thêm một control vào bản đồ
-map.addControl(new mapboxgl.NavigationControl());
+map.addControl(new wemapgl.NavigationControl());
 ```
 
 ---
@@ -57,7 +57,7 @@ Removes the control from the map.
 
 ```javascript
 // Định nghĩa một control
-var navigation = new mapboxgl.NavigationControl();
+var navigation = new wemapgl.NavigationControl();
 // Thêm control này vào bản đồ
 map.addControl(navigation);
 // Xoá control này khỏi bản đò
