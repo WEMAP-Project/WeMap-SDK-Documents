@@ -478,12 +478,19 @@ WeMap GL JS khởi tạo bản đồ trên trang web và trả về đối tư�
 <td><code>number</code></td>
 <td>Độ phóng đại khi khởi tạo của bản đồ</td>
 <td><code>10</code></td>
-<td>no</td>
+<td>không</td>
 </tr>
 <tr>
 <td><code>options.reverse</code></td>
 <td><code>boolean</code></td>
 <td>Nếu <code>true</code>, bật tính năng reverse khi nhấn chuột trái, bật tính năng menu khi nhấn chuột phải. Biểu tượng chuột sẽ thay đổi khi di chuyển chuột qua icon của các địa điểm POI và hiển thị thông tin chi tiết của địa điểm khi nhấn vào.</td>
+<td><code>false</code></td>
+<td>không</td>
+</tr>
+<tr>
+<td><code>options.traffic</code></td>
+<td><code>boolean</code></td>
+<td>Nếu <code>true</code>, sẽ bật layer bản đồ traffic.</td>
 <td><code>false</code></td>
 <td>không</td>
 </tr>
@@ -503,8 +510,12 @@ WeMap GL JS khởi tạo bản đồ trên trang web và trả về đối tư�
     style: 'bright',
     center: [105.1, 21.0],
     zoom: 13,
+    // Turn on urlController
     urlController: &quot;true&quot;,
-    reverse: &quot;true&quot;
+    // Turn on reverse
+    reverse: true,
+    // Turn on traffic
+    traffic: true
 });
 </code></pre>
 <h3 id="cac-ham">Các hàm</h3>
