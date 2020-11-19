@@ -571,70 +571,30 @@
 <tbody>
 <tr>
 <td><code>addTo(map)</code></td>
-<td>Thêm marker lên Map <br>Parameters: map <br/>Returns</td>
+<td>Thêm marker lên Map <br>Parameters: map <br/>Returns: Marker: this</td>
 </tr>
 <tr>
-<td><br/>Marker: this</td>
-<td></td>
-</tr>
-<tr>
-<td>getElement()</td>
+<td><code>getElement()</code></td>
 <td>Trả về phần tử HTML của marker</td>
 </tr>
 <tr>
 <td><code>getLngLat()</code></td>
-<td>Nhận vị trí địa lý của marker.</td>
-</tr>
-<tr>
-<td><br/></td>
-<td></td>
-</tr>
-<tr>
-<td><br/>Kinh độ của kết quả có thể khác bội số 360 độ so với kinh độ được setLngLat đặt trước đó vì Marker bao bọc kinh độ cố định trên các bản sao của thế giới để giữ cho marker trên màn hình.<br/>Returns: LngLat</td>
-<td></td>
+<td>Nhận vị trí địa lý của marker.  Kinh độ của kết quả có thể khác bội số 360 độ so với kinh độ được setLngLat đặt trước đó vì Marker bao bọc kinh độ cố định trên các bản sao của thế giới để giữ cho marker trên màn hình.<br/>Returns: LngLat</td>
 </tr>
 <tr>
 <td><code>isDraggable()</code></td>
-<td>Trả lại <code>true</code>nếu marker kéo thể kéo <br/></td>
+<td>Trả lại <code>true</code>nếu marker kéo thể kéo <br/>Returns: <br/>boolean: True if the marker is draggable.</td>
 </tr>
 <tr>
-<td><br/>Returns</td>
-<td></td>
+<td><code>remove()</code></td>
+<td>Xóa marker khỏi bản đồ <code>marker.remove();</code></td>
 </tr>
 <tr>
-<td><br/>boolean: True if the marker is draggable.</td>
-<td></td>
-</tr>
-<tr>
-<td>remove()</td>
-<td>Removes the marker from a map</td>
-</tr>
-<tr>
-<td><br/></td>
-<td></td>
-</tr>
-<tr>
-<td><br/>Returns</td>
-<td></td>
-</tr>
-<tr>
-<td><br/>Marker: this</td>
-<td></td>
-</tr>
-<tr>
-<td><br/>Example</td>
-<td></td>
-</tr>
-<tr>
-<td><br/><code>marker.remove();</code></td>
-<td></td>
-</tr>
-<tr>
-<td>setDraggable(boolean)</td>
+<td><code>setDraggable(boolean)</code></td>
 <td>Đặt thuộc tính có thể kéo vào marker<br/>setDraggable(true): Cho phép kéo marker<br/>setDraggable(false): Không cho phép kéo marker</td>
 </tr>
 <tr>
-<td>setLngLat()</td>
+<td><code>setLngLat()</code></td>
 <td>Thiết lập vị trí đặt marker hoặc di chuyển<br/>Ví dụ: <code>setLngLat([105.82387887026971, 21.042387911156695])</code></td>
 </tr>
 <tr>
