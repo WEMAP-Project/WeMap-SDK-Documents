@@ -1,0 +1,867 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.0">
+    
+    
+      
+        <title>Marker - Tài liệu WeMap Web SDK</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.bc7e593a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab28b872.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#marker" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Tài liệu WeMap Web SDK" class="md-header-nav__button md-logo" aria-label="Tài liệu WeMap Web SDK">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Tài liệu WeMap Web SDK
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Marker
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Tài liệu WeMap Web SDK" class="md-nav__button md-logo" aria-label="Tài liệu WeMap Web SDK">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Tài liệu WeMap Web SDK
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      Trang chủ
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      WeMap Web SDK
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="WeMap Web SDK" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        WeMap Web SDK
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../readme/" class="md-nav__link">
+      WeMap Web SDK
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../wemap/" class="md-nav__link">
+      WeMap
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../wegeocoder/" class="md-nav__link">
+      WeGeocoder
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../wedirections/" class="md-nav__link">
+      WeDirections
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../wefilter/" class="md-nav__link">
+      WeFilterControl
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../GeoJSON/" class="md-nav__link">
+      GeoJSON
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Marker
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Marker
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tham-so-co-ban" class="md-nav__link">
+    Tham số cơ bản
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ham" class="md-nav__link">
+    Hàm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event" class="md-nav__link">
+    Event
+  </a>
+  
+    <nav class="md-nav" aria-label="Event">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#drag" class="md-nav__link">
+    drag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dragend" class="md-nav__link">
+    dragend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dragstart" class="md-nav__link">
+    dragstart
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#them-marker-tu-mot-file-geojson" class="md-nav__link">
+    Thêm marker từ một file geojson
+  </a>
+  
+    <nav class="md-nav" aria-label="Thêm marker từ một file geojson">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ex1-thiet-lap-icon-tinh" class="md-nav__link">
+    Ex1: Thiết lập icon tĩnh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex2-thiet-lap-icon-ong" class="md-nav__link">
+    Ex2: Thiết lập icon động
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tham-so-co-ban" class="md-nav__link">
+    Tham số cơ bản
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ham" class="md-nav__link">
+    Hàm
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event" class="md-nav__link">
+    Event
+  </a>
+  
+    <nav class="md-nav" aria-label="Event">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#drag" class="md-nav__link">
+    drag
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dragend" class="md-nav__link">
+    dragend
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dragstart" class="md-nav__link">
+    dragstart
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#them-marker-tu-mot-file-geojson" class="md-nav__link">
+    Thêm marker từ một file geojson
+  </a>
+  
+    <nav class="md-nav" aria-label="Thêm marker từ một file geojson">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ex1-thiet-lap-icon-tinh" class="md-nav__link">
+    Ex1: Thiết lập icon tĩnh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ex2-thiet-lap-icon-ong" class="md-nav__link">
+    Ex2: Thiết lập icon động
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="marker">Marker</h1>
+<p>Hỗ trợ thêm các đối tượng marker tùy chỉnh lên bản đồ</p>
+<pre><code class="language-javascript">new Marker(options: Object?, legacyOptions: Options?)
+</code></pre>
+<h3 id="tham-so-co-ban">Tham số cơ bản</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>options.element</code> <a href="https://developer.mozilla.org/docs/Web/HTML/Element">HTMLElement</a></td>
+<td>Thành phần DOM để thêm marker, mặc định là icon màu hình giọt nước màu lam nhạt.</td>
+</tr>
+<tr>
+<td><code>options.anchor</code> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a><br>default: <code>center</code></td>
+<td>Điểm neo đánh dấu vị trí đặt marker. Các tham số <code>'center'</code> , <code>'top'</code> , <code>'bottom'</code> , <code>'left'</code> , <code>'right'</code> , <code>'top-left'</code> , <code>'top-right'</code> , <code>'bottom-left'</code> , và<code>'bottom-right'</code> .</td>
+</tr>
+<tr>
+<td><code>options.offset</code></td>
+<td>Độ lệnh tính bằng pixel</td>
+</tr>
+<tr>
+<td><code>options.color</code>  <br>default: <code>'#3FB1CE'</code></td>
+<td>Màu sẽ sử dụng cho marker mặc định là màu xanh lam nhạt.</td>
+</tr>
+<tr>
+<td>options.scale <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number </a> <br>default: <code>1</code></td>
+<td>Tỷ lệ để sử dụng cho marker mặc định nếu options.element không được thiết lập. Tỷ lệ mặc định tương ứng với chiều cao là <code>41px</code> và chiều rộng là<code>27px</code>.</td>
+</tr>
+<tr>
+<td>options.draggable <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean </a><br>default: <code>false</code></td>
+<td>Tham số xác định có thể kéo một điểm đánh dấu đến vị trí mới trên bản đồ hay không.</td>
+</tr>
+<tr>
+<td>options.rotation <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number </a><br>default: <code>0</code></td>
+<td>Góc quay của marker tính bằng độ, so với cài đặt <code>RotationAlignment</code> tương ứng của nó. Giá trị dương sẽ xoay marker theo chiều kim đồng hồ.</td>
+</tr>
+<tr>
+<td>options.pitchAlignment <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string </a><br>default: <code>'auto'</code></td>
+<td><code>map</code> căn chỉnh<code>Marker</code> với mặt phẳng của bản đồ. <code>viewport</code> căn chỉnh<code>Marker</code> với mặt phẳng của khung nhìn. <code>auto</code> tự động đối sánh với giá trị của<code>RotationAlignment</code>.</td>
+</tr>
+<tr>
+<td>options.rotationAlignment <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string </a><br>default: <code>'auto'</code></td>
+<td><code>map</code> sắp xếp vòng quay của<code>Marker</code> so với bản đồ, duy trì một hướng khi bản đồ xoay. <code>viewport</code> căn chỉnh cách xoay của<code>Marker</code> so với chế độ xem, không phù hợp với việc xoay bản đồ. <code>auto</code> tương đương với<code>viewport</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ham">Hàm</h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>addTo(map)</code></td>
+<td>Thêm marker lên Map <br>Parameters: map <br/>Returns</td>
+</tr>
+<tr>
+<td><br/>Marker: this</td>
+<td></td>
+</tr>
+<tr>
+<td>getElement()</td>
+<td>Trả về phần tử HTML của marker</td>
+</tr>
+<tr>
+<td><code>getLngLat()</code></td>
+<td>Nhận vị trí địa lý của marker.</td>
+</tr>
+<tr>
+<td><br/></td>
+<td></td>
+</tr>
+<tr>
+<td><br/>Kinh độ của kết quả có thể khác bội số 360 độ so với kinh độ được setLngLat đặt trước đó vì Marker bao bọc kinh độ cố định trên các bản sao của thế giới để giữ cho marker trên màn hình.<br/>Returns: LngLat</td>
+<td></td>
+</tr>
+<tr>
+<td><code>isDraggable()</code></td>
+<td>Trả lại <code>true</code>nếu marker kéo thể kéo <br/></td>
+</tr>
+<tr>
+<td><br/>Returns</td>
+<td></td>
+</tr>
+<tr>
+<td><br/>boolean: True if the marker is draggable.</td>
+<td></td>
+</tr>
+<tr>
+<td>remove()</td>
+<td>Removes the marker from a map</td>
+</tr>
+<tr>
+<td><br/></td>
+<td></td>
+</tr>
+<tr>
+<td><br/>Returns</td>
+<td></td>
+</tr>
+<tr>
+<td><br/>Marker: this</td>
+<td></td>
+</tr>
+<tr>
+<td><br/>Example</td>
+<td></td>
+</tr>
+<tr>
+<td><br/><code>marker.remove();</code></td>
+<td></td>
+</tr>
+<tr>
+<td>setDraggable(boolean)</td>
+<td>Đặt thuộc tính có thể kéo vào marker<br/>setDraggable(true): Cho phép kéo marker<br/>setDraggable(false): Không cho phép kéo marker</td>
+</tr>
+<tr>
+<td>setLngLat()</td>
+<td>Thiết lập vị trí đặt marker hoặc di chuyển<br/>Ví dụ: <code>setLngLat([105.82387887026971, 21.042387911156695])</code></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="example">Example:</h3>
+<p>Thêm 1 marker tùy chỉnh lên bản đồ</p>
+<pre><code class="language-javascript">var marker = new wemapgl.Marker()
+            .setLngLat([105.82387887026971, 21.042387911156695])
+            .addTo(map);
+</code></pre>
+<h3 id="event">Event</h3>
+<h4 id="drag">drag</h4>
+<p>Kích hoạt khi marker bị kéo (dragged)</p>
+<h4 id="dragend">dragend</h4>
+<p>Kích hoạt khi marker được kéo xong</p>
+<h4 id="dragstart">dragstart</h4>
+<p>Kích hoạt khi quá trình kéo bắt đầu</p>
+<h3 id="them-marker-tu-mot-file-geojson">Thêm marker từ một file geojson</h3>
+<h4 id="ex1-thiet-lap-icon-tinh">Ex1: Thiết lập icon tĩnh</h4>
+<p>style để show marker</p>
+<pre><code class="language-css">/* style.css */
+.marker {
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/9e/Pin-location.png');
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+</code></pre>
+<p>geojson data</p>
+<pre><code class="language-javascript">let geojson = {
+        'type': 'FeatureCollection',
+        'features': [
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [105.9538, 21.0223]
+                },
+                'properties': {
+                    'title': 'Marker title 1',
+                    'description': 'Marker 1'
+                }
+            },
+            {
+                'type': 'Feature',
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [105.7599, 21.0299]
+                },
+                'properties': {
+                    'title': 'Marker title 2',
+                    'description': 'Marker 2'
+                }
+            }
+        ]
+    };
+</code></pre>
+<p>Thêm marker lên bản đồ</p>
+<pre><code class="language-javascript">// add markers to map
+    geojson.features.forEach(function (marker) {
+        // create a HTML element for each feature
+        let el = document.createElement('div');
+        el.className = 'marker';
+        // make a marker for each feature and add it to the map
+        new wemapgl.Marker(el)
+            .setLngLat(marker.geometry.coordinates)
+            .setPopup(
+                new wemapgl.Popup({ offset: 25 }) // add popups
+                    .setHTML(
+                        '&lt;h3&gt;' +
+                        marker.properties.title +
+                        '&lt;/h3&gt;&lt;p&gt;' +
+                        marker.properties.description +
+                        '&lt;/p&gt;'
+                    )
+            )
+            .addTo(map);
+    });
+</code></pre>
+<h4 id="ex2-thiet-lap-icon-ong">Ex2: Thiết lập icon động</h4>
+<p>style</p>
+<pre><code class="language-css">.marker {
+            display: block;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            padding: 0;
+        }
+</code></pre>
+<p>geojson data</p>
+<pre><code class="language-javascript">var geojson = {
+        'type': 'FeatureCollection',
+        'features': [
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Foo',
+                    'iconSize': [60, 60]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-66.324462890625, -16.024695711685304]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Bar',
+                    'iconSize': [50, 50]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-61.2158203125, -15.97189158092897]
+                }
+            },
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': 'Baz',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [-63.29223632812499, -18.28151823530889]
+                }
+            }
+        ]
+    };
+</code></pre>
+<p>Thêm marker lên bản đồ</p>
+<pre><code class="language-javascript">// add markers to map
+    geojson.features.forEach(function (marker) {
+// create a DOM element for the marker
+        var el = document.createElement('div');
+        el.className = 'marker';
+        el.style.backgroundImage =
+            'url(https://placekitten.com/g/' +
+            marker.properties.iconSize.join('/') +
+            '/)';
+        el.style.width = marker.properties.iconSize[0] + 'px';
+        el.style.height = marker.properties.iconSize[1] + 'px';
+
+        el.addEventListener('click', function () {
+            window.alert(marker.properties.message);
+        });
+
+// add marker to map
+        new wemapgl.Marker(el)
+            .setLngLat(marker.geometry.coordinates)
+            .addTo(map);
+    });
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../GeoJSON/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                GeoJSON
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            2020 © WeMap
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.6a3d08fc.min.js"></script>
+      <script src="../../assets/javascripts/bundle.71201edf.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
