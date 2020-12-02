@@ -303,6 +303,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    Demo
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -375,6 +382,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#demo" class="md-nav__link">
+    Demo
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -408,38 +422,93 @@
 <p>data (<a href="https://geojson.org/">GeoJSON</a>): Có thể là url đến file GeoJSON hoặc object dưới dạng GeoJSON</p>
 </li>
 </ul>
+<h3 id="demo"><a href="https://wemap-project.github.io/WeMap-SDK-Documents/Web/demo">Demo</a></h3>
 <p><strong>Ví dụ</strong></p>
-<pre><code class="language-javascript">map.addSource('source_id_name', {
-    type: 'geojson',
-    data: 'https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_10m_ports.geojson'
-});
+<ul>
+<li>Thêm geojson point</li>
+</ul>
+<pre><code class="language-javascript">map.on('load', function () {
+    map.addSource('source_id_name', {
+        type: 'geojson',
+        data: 'https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_10m_ports.geojson'
+    });
 
-map.addLayer({
-    id: 'unclustered-point',
-    type: 'circle',
-    source: 'source_id_name',
-    filter: ['!', ['has', 'point_count']],
-    paint: {
-        'circle-color': '#11b4da',
-        'circle-radius': 4,
-        'circle-stroke-width': 1,
-        'circle-stroke-color': '#fff'
-    }
+    map.addLayer({
+        id: 'unclustered-point',
+        type: 'circle',
+        source: 'source_id_name',
+        filter: ['!', ['has', 'point_count']],
+        paint: {
+            'circle-color': '#11b4da',
+            'circle-radius': 4,
+            'circle-stroke-width': 1,
+            'circle-stroke-color': '#fff'
+        }
+    });
 });
 </code></pre>
-<pre><code class="language-javascript">map.addSource('source_id_name', {
-   type: 'geojson',
-   data: {
-       &quot;type&quot;: &quot;FeatureCollection&quot;,
-       &quot;features&quot;: [{
-           &quot;type&quot;: &quot;Feature&quot;,
-           &quot;properties&quot;: {},
-           &quot;geometry&quot;: {
-               &quot;type&quot;: &quot;Point&quot;,
-               &quot;coordinates&quot;: [105.84370246986344, 21.003961186227826]
-           }
-       }]
-   }
+<ul>
+<li>Tùy chỉnh icon hiển thị</li>
+</ul>
+<pre><code class="language-javascript">map.on('load', function () {
+    map.loadImage(
+        'https://upload.wikimedia.org/wikipedia/commons/7/7c/201408_cat.png',
+        function (error, image) {
+            if (error) throw error;
+            map.addImage('cat', image, {
+                content: [16, 16, 400, 400], // place text over left half of image, avoiding the 16px border
+                stretchX: [[16, 400]], // stretch everything horizontally except the 16px border
+                stretchY: [[16, 400]], // stretch everything vertically except the 16px border
+            });
+            map.addSource('cat-image', {
+                'type': 'geojson',
+                'data': {
+                    'type': 'FeatureCollection',
+                    'features': [
+                        {
+                            'type': 'Feature',
+                            'geometry': {
+                                'type': 'Point',
+                                'coordinates': [105.781187, 21.036902]
+                            }
+                        }
+                    ]
+                }
+            });
+            map.addLayer({
+                'id': 'points',
+                'type': 'symbol',
+                'source': 'cat-image',
+                'layout': {
+                    'icon-image': 'cat',
+                    'icon-size': 0.25
+                }
+            });
+        }
+    );
+});
+</code></pre>
+<ul>
+<li>Thêm GeoJSON từ các dữ liệu dạng line</li>
+</ul>
+<pre><code class="language-javascript">map.on('load', function () {
+    map.addSource('source_id_name', {
+        type: 'geojson',
+        // http://polygons.openstreetmap.fr/?id=49915
+        // http://polygons.openstreetmap.fr/get_geojson.py?id=49915&amp;params=0.080000-0.001000-0.001000
+        // Ranh giới Việt Nam
+        data: 'data/data.geojson' 
+    });
+
+     map.addLayer({
+        'id': 'route',
+        'type': 'line',
+        'source': 'source_id_name',
+        'paint': {
+            'line-color': '#888',
+            'line-width': 8
+        }
+    });
 });
 </code></pre>
 <p>Trả về <strong><a href="/wemap">Map</a></strong> <code>this</code>;</p>
