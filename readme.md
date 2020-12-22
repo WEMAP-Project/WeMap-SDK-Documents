@@ -1,7 +1,6 @@
  # Thông báo
- - Từ ngày 22/12/2020 tài liệu SDK của WeMap sẽ được chuyển sang Repo mới: https://github.com/WEMAP-Project/WeMap-Documents
+ - Từ ngày 22/12/2020 tài liệu SDK của WeMap sẽ được chuyển sang Repo mới: https://github.com/WEMAP-Project/WeMap-Documents. Vui lòng truy cập Repo mới để không bỏ lỡ những cập nhật mới của tài liệu.
  - Link Preview: https://wemap-project.github.io/WeMap-Documents/
- 
  
  # WeMap SDK
 
